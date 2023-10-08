@@ -7,6 +7,9 @@ permissions:
   actions: read
   contents: read
 
+env:
+  CI: true
+
 jobs:
   build:
     name: Autograding
