@@ -14,7 +14,8 @@ Original repository: https://github.com/nickolaym/simple_test
 ## Macros
 
 ### TEST
-```
+
+```c++
 TEST(suite, name, [enabled]) {
   test body goes here;
 }
@@ -24,7 +25,8 @@ TEST(suite, name, [enabled]) {
 - `enabled` is optional bool expression (runtime constant, evaluated before main())
 
 introduces auxillary object test_name and function
-```
+
+```c++
 void func_name() {
   test body goes here;
 }
@@ -36,7 +38,8 @@ Please don't catch(...) inside it without special need.
 GTest compatibility: if suite or name starts with `DISABLED`, the test will skip.
 
 ### ASSERT_..., EXPECT_...
-```
+
+```c++
 ASSERT_CMP(a, op, b)
 EXPECT_CMP(a, op, b)
 ASSERT_EQ, ASSERT_LT, ASSERT_LE, ... as in GTest
@@ -72,7 +75,7 @@ So, they should be printable.
 
 To print extra messages if an assetion fails, use following syntax:
 
-```
+```c++
 ASSERT_BLABLABLA() << common << C++ << stream << args;
 
 ASSERTION_FAULT(common, C++, stream, args);
@@ -82,7 +85,7 @@ Note that if the assertion passes, nothing will evaluate.
 
 ### Show green assertions
 
-```
+```c++
 SHOW_GREEN_ASSERTIONS(flag)
 ```
 where `flag` is boolean
@@ -98,7 +101,8 @@ See examples in just_simple_test.cpp
 Just implementation of `int main()`
 
 Feel free to call a subsequent function from your `main()` with your fixtures:
-```
+
+```c++
 int main(int argc, char** argv) {
   ...
   int result = simple_test::testing_main(argc, argv);
@@ -109,7 +113,7 @@ int main(int argc, char** argv) {
 
 #### Arguments
 
-```
+```c++
 your_test_application [-h] [--help] [-l] [--list] {patterns}
 ```
 
