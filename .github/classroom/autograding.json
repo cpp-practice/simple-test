@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "just_simple_test",
+      "setup": "",
+      "run": "cmake . && make just_simple_test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "test_using_simple_test",
+      "setup": "",
+      "run": "cmake . && make test_using_simple_test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    }
+  ]
+}
