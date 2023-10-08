@@ -9,8 +9,8 @@ TEST(should_fail, vector_capacity) {
   std::vector<int> xs;
   xs.reserve(100500);
   xs.clear();
-  EXPECT_CMP(xs.capacity(), ==, 0) << " ahaha ? ahaha!";
-  ASSERT_CMP(xs.size(), ==, 1) << " ahaha ? ahaha!";
+  EXPECT_CMP(xs.capacity(), ==, 0ul) << " ahaha ? ahaha!";
+  ASSERT_CMP(xs.size(), ==, 1ul) << " ahaha ? ahaha!";
 }
 
 TEST(should_fail, lots_of_failed_expectations) {

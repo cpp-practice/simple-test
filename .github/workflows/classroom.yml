@@ -7,18 +7,15 @@ permissions:
   actions: read
   contents: read
 
-env:
-  CI: true
-
 jobs:
   build:
-    name: Autograding
+    name: Test in autograding env
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: education/autograding@v1
   manual-run:
-    name: Run comp tests
+    name: Test in step env
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
