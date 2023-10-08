@@ -10,7 +10,7 @@ else()
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wextra-semi -O1 -g -fsanitize=address -fno-omit-frame-pointer")
 endif()
 
-if(NOT DEFINED ENVCI) 
+if(NOT DEFINED ENV{CI}) 
     find_package(GTest REQUIRED)
     include(GoogleTest)
 
