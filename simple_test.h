@@ -9,13 +9,7 @@
 #include <iomanip>
 #include <exception>
 #include <cstring>
-
-// :NOTE: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105562
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
 #include <regex>
-#pragma GCC diagnostic pop
-
 #include <string>
 #include <vector>
 
