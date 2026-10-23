@@ -3,13 +3,13 @@ name: CMake Build and Test
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   build:
     name: Build Project
     runs-on: ubuntu-latest
-    container: rutsky/cpp-test:23
+    container: rutsky/cpp-test:25
     timeout-minutes: 5
 
     steps:
