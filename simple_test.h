@@ -450,7 +450,7 @@ template<class TAG, class EPS> struct tagged_floatcmp_factory {
     void _test__##suite##__##name##__func(); \
     simple_test::TestCase _test__##suite##__##name##__var( \
         #suite, #name, \
-        _test__##suite##__##name##__func ,##__VA_ARGS__); \
+        _test__##suite##__##name##__func __VA_OPT__(,) ##__VA_ARGS__); \
     void _test__##suite##__##name##__func() /* test body goes here */
 
 #define EXAMINATION_SUFFIX(passed, assertion) \
@@ -459,11 +459,11 @@ template<class TAG, class EPS> struct tagged_floatcmp_factory {
 
 #define EXAMINE_IMPL(ae, a, be, b, assertion, ...) \
     if (const bool passed = \
-        simple_test::expect_comparison(__FILE__, __LINE__, ae, a, be, b, assertion, ##__VA_ARGS__); \
+        simple_test::expect_comparison(__FILE__, __LINE__, ae, a, be, b, assertion __VA_OPT__(,) ##__VA_ARGS__); \
         passed && !simple_test::show_green_assertions()) ; \
     else EXAMINATION_SUFFIX(passed, assertion)
 #define EXAMINE(a, b, assertion, ...) \
-    EXAMINE_IMPL(#a, a, #b, b, assertion, ##__VA_ARGS__)
+    EXAMINE_IMPL(#a, a, #b, b, assertion __VA_OPT__(,) ##__VA_ARGS__)
 
 #define EXAMINE_CMP(a, op, b, assertion) \
     EXAMINE(a, b, assertion, simple_test::TAGGED_CMP(op)(), #op)
