@@ -23,4 +23,4 @@ jobs:
         run: cmake --build ${{github.workspace}}/build --config Release
 
       - name: Test
-        run: ./run_tests.sh
+        run: ./run_tests.sh ${{github.workspace}}
